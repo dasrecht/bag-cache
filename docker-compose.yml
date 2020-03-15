@@ -1,0 +1,12 @@
+version: "3.3"
+services:
+    bagcache:
+      image: dasrecht/bagcache
+      build:
+        context: .
+        dockerfile: nginx.Dockerfile
+      volumes:
+        - ./logs:/var/log/nginx
+        - ./cache:/var/cache/nginx
+      ports:
+        - 8080:8080
